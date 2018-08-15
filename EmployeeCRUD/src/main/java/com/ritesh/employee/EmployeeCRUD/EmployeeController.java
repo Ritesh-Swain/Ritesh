@@ -8,6 +8,8 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
@@ -28,8 +30,12 @@ public class EmployeeController {
 	@Autowired
 	private Environment env;
 	
+	private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+
+	
 	@RequestMapping(value="/dashboard", method = RequestMethod.GET)
 	public ModelAndView Dashboard(){
+		logger.debug("Hiii ");
 		ModelAndView modelAndView = new ModelAndView();
 		/*Employee employee = new Employee();
 		modelAndView.addObject("employee", employee);*/
@@ -47,6 +53,8 @@ public class EmployeeController {
 	
 	@RequestMapping(value="/addEmployee", method = RequestMethod.POST)
 	public ModelAndView addEmployee(@Valid Employee employee, BindingResult bindingResult){
+		
+		logger.debug("Emp Name is "+employee.getName());
 		ModelAndView modelAndView = new ModelAndView();
 		employeeRepository.save(employee);
 		modelAndView.addObject("successMessage", env.getProperty("employee.msg.successfullAdd"));

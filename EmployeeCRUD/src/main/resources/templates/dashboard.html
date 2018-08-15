@@ -1,0 +1,59 @@
+<head>
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="form-group">
+	<div></div>
+	
+	<form th:action="@{/dashboard}" method="get">
+		<button class="btn btn-md btn-warning btn-block" >Wecome</button>
+	</form>
+					<form autocomplete="off" action="#" th:action="@{/addEmployee}"
+					 method="get" class="form-horizontal"
+					role="form">
+						<div class="col-sm-9">
+							<button type="submit" class="btn btn-primary btn-block">Add Employee</button>
+						</div>
+					</div>
+					</form>
+					<form autocomplete="off" action="#" th:action="@{/updateEmployee}"
+					 method="get" class="form-horizontal"
+					role="form">
+						<div class="col-sm-9">
+							<button type="submit" class="btn btn-primary btn-block">update Employee</button>
+						</div>
+					</div>
+					</form>
+					<form autocomplete="off" action="#" th:action="@{/getEmployee}"
+					 method="get" class="form-horizontal"
+					role="form">
+						<div class="col-sm-9">
+							<button type="submit" class="btn btn-primary btn-block">Get Employee Detail</button>
+						</div>
+					</div>
+					</form>
+					
+					<form autocomplete="off" action="#" th:action="@{/delEmployee}"
+					 method="get" class="form-horizontal"
+					role="form">
+						<div class="col-sm-9">
+							<button type="submit" class="btn btn-primary btn-block">Delete employee</button>
+						</div>
+					</div>
+					</form>
+					
+					<form autocomplete="off" action="#" th:action="@{/getEmployeebyName}"
+					 method="get" class="form-horizontal"
+					role="form">
+						<div class="col-sm-9">
+							<button type="submit" class="btn btn-primary btn-block">Search employee by Name</button>
+						</div>
+					</div>
+					</form>
+					
+</body>
+</html>

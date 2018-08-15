@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!-- <form th:action="@{/}" method="get">
+		<button class="btn btn-md btn-warning btn-block" type="Submit">Go To Login Page</button>
+	</form>	 -->
+	
+	<div class="container">
+	<form th:action="@{/dashboard}" method="get">
+		<button class="btn btn-md btn-warning btn-block" type="Submit">Go to dashboard</button>
+	</form>
+	<div>
+	
+	</div>
+		<div class="row">
+			<div class="form">
+    <form action="delEmployee1" method="post" onsubmit="return validate()">
+      <table>
+        <tr>
+          <td>Enter Your emp id</td>
+          <td><input id="id" name="id"></td>
+          <td><input type="submit" value="Submit"></td>
+        </tr>
+      </table>
+    </form>
+					
+					<span th:utext="${successMessage}"></span>
+					
+					
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+<script>
+function validate() {
+	
+	var id = document.getElementById("id").value;
+	
+	
+	if (!(id % 1 === 0)) {
+		alert('please enter valid emp id');
+				return false;
+	}
+	 else {
+		return true;
+	}
+}
+</script>
+

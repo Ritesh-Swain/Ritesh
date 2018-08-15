@@ -1,0 +1,4 @@
+applications:
+- name: Employee-CRUD
+  memory: 1024M
+  instances: 1

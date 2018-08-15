@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!-- <form th:action="@{/}" method="get">
+		<button class="btn btn-md btn-warning btn-block" type="Submit">Go To Login Page</button>
+	</form>	 -->
+	
+	<div class="container">
+	<form th:action="@{/dashboard}" method="get">
+		<button class="btn btn-md btn-warning btn-block" type="Submit">Go to dashboard</button>
+	</form>
+	
+	<div>
+	
+	</div>
+		<div class="row">
+			<div class="form">
+    <form action="getEmployeebyName" method="post" onsubmit="return validate()">
+      <table>
+        <tr>
+          <td>Enter Your emp name or Part of the name</td>
+          <td><input id="name" name="name"></td>
+          <td><input type="submit" value="Submit"></td>
+        </tr>
+      </table>
+    </form>
+					
+					<span th:utext="${successMessage}"></span>
+					
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	<span th:utext="${successMessage}"></span>
+
+ <p th:each="nameLists : ${nameList}"
+       th:text="${nameLists}">Name list</p>
+</body>
+</html>
+
+
+
+</body>
+</html>
+<script>
+function validate() {
+	var name = document.getElementById("name").value;
+	if (name == '') {
+		alert('name lenght should be min 2');
+		return false;
+	} 
+	
+	else {
+		return true;
+	}
+}
+</script>
